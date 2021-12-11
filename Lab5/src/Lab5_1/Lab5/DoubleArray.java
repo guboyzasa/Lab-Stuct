@@ -15,5 +15,6 @@ public class DoubleArray {
             a[i]=arr[i];
         }
         return a;
+
     }
 }
