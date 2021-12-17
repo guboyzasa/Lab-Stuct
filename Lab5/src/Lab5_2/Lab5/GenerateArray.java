@@ -6,21 +6,17 @@ import java.util.Scanner;
 public class GenerateArray {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int arr[] = new int[1];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = sc.nextInt();
-        }
+        int num = sc.nextInt();
         GenArray obj = new GenArray();
-        int data5[] = obj.data5(0);
-        System.out.println(Arrays.toString(data5));
+        System.out.println(Arrays.toString(obj.data5(num)));
     }
 }
 
 class GenArray {
     public int[] data5(int n) {
-        int arr[] = new int[4];
+        int arr[] = new int[n];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = arr[i];
+            arr[i] = 5;
         }
         return arr;
     }
