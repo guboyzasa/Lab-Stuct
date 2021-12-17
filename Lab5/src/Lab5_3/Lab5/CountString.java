@@ -4,8 +4,6 @@ public class CountString {
     public static void main(String[] args) {
 
     }
-    public int countM(String str){
 
-    }
 
 }

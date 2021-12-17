@@ -1,20 +1,27 @@
 package Lab5_1.Lab5;
+import java.util.Scanner;
+import java.util.Arrays;
 
 public class DoubleArray {
     public static void main(String[] args) {
-        DoubleArray s = new DoubleArray();
-        int[]b = {1,2,4,};
-        int[]c = s.copyArray(b);
-        for (int i:c){
-            System.out.println(i);
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
         }
-    }
-    private int[] copyArray(int arr[]) {
-        int[] a = new int[arr.length*2];
-        for (int i=0;i< arr.length;i++){
-            a[i]=arr[i];
-        }
-        return a;
-
+        DoubleArrayCopy obj = new DoubleArrayCopy();
+        int arrayCopy[] = obj.copyArray(arr);
+        System.out.println(Arrays.toString(arrayCopy));
     }
 }
+    class DoubleArrayCopy{
+        public int[] copyArray(int arr[]){
+           int newArray[] = new int[arr.length*2];
+            for (int i=0;i<arr.length;i++){
+                newArray[i]= arr[i];
+        }
+            return newArray;
+        }
+    }
+

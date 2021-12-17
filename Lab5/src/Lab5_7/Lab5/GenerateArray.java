@@ -4,7 +4,4 @@ public class GenerateArray {
     public static void main(String[] args) {
 
     }
-    public int[] gen(int n, int i){
-
-    }
 }
