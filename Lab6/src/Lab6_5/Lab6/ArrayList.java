@@ -15,25 +15,49 @@ public class ArrayList {
 }
 class ArrayOpt{
     public int sumAll(ArrayLst lst){
-
+        int sum = 0;
+        for(int i = 0; i < lst.size(); i++){
+            sum = sum+(int)lst.get(i);
+        }
+        return sum;
     }
 }
 class ArrayLst {
+    private Object[] elementData = new Object[1];
+    private int size = 0;
 
     public void add(int i, Object e) {
+        ensureCapacity(size + 1);
+        for (int j = size - 1; j > i; j--) {
+            elementData[j + 1] = elementData[j];
+        }
+        elementData[i] = e;
+        size++;
+    }
 
+    private void ensureCapacity(int capacity) {
+        if (capacity > elementData.length) {
+            int s = elementData.length * 2;
+            Object[] arr = new Object[s];
+            for (int i = 0; i < elementData.length; i++) {
+                arr[i] = elementData[i];
+            }
+            elementData = arr;
+        }
     }
 
     public void add(Object e) {
-
+        ensureCapacity(size + 1);
+        elementData[size] = e;
+        size++;
     }
 
     public Object get(int i) {
-
+        return elementData[i];
     }
 
     public int size() {
-
+        return size;
     }
 
     public String toString() {
@@ -44,5 +68,3 @@ class ArrayLst {
         return str + "]";
     }
 }
-
-
