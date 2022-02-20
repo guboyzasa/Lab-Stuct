@@ -38,7 +38,7 @@ class ArrayListQueue  {
         return ob;
     }
      public int size(){
-         return lst.size();
+        return lst.size();
      }
 
     public String toString(){
